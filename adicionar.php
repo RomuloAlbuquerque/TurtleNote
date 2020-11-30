@@ -7,8 +7,8 @@ include_once 'includes/header.php';
         <h3>Nova Anotação</h3>
         <form action="php_action/create.php" method="POST">
             <div class="input-field col s12">
-                <input type="date" name="data" id="data">
-                <label for="data">Data</label>
+                <input type="text" name="datta" id="datta">
+                <label for="datta">Data</label>
             </div>
             <div class="input-field col s12">
                 <input type="text" name="titulo" id="titulo">
