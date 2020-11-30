@@ -5,7 +5,7 @@ include_once 'includes/header.php';
 <div class="row">
     <div class="col s12 m6 push-m3">
         <h3>Nova Anotação</h3>
-        <form>
+        <form action="php_action/create.php" method="POST">
             <div class="input-field col s12">
                 <input type="date" name="data" id="data">
                 <label for="data">Data</label>
@@ -15,13 +15,12 @@ include_once 'includes/header.php';
                 <label for="titulo">Título</label>
             </div>
             <div class="input-field col s12">
-                <input class="input-field col s12" type="text" name="nota" id="nota">
+                <textarea class="campodenota" name="nota" id="nota" cols="30" rows="10" maxlength="5000"></textarea>
                 <label for="nota">Nota</label>
             </div>
-            <div class="input-field col s12">
-                <textarea name="nota" id="nota" class="campodenota" cols="30" rows="10" maxlength="5000"></textarea>
-                <label for="nota">Nota</label>
-            </div>
+
+            <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
+            <a href="index.php" class="btn green">Todas as Notas</a>
         </form>
     </div>
 </div>
