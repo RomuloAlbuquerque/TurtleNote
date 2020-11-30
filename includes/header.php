@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>TurtleNote</title>
 
+        <link rel="stylesheet" href="css/style.css">
+
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
