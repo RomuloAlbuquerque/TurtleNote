@@ -29,8 +29,3 @@ include_once 'includes/header.php';
 <?php
 include_once 'includes/footer.php';
 ?>
-.input:focus {
-outline: none !important;
-border:1px solid red;
-box-shadow: 0 0 10px #719ECE;
-}
