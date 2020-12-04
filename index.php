@@ -1,27 +1,14 @@
 <?php
-//sessao
-session_start();
-if (isset($_SESSION['mensagem'])) : ?>
 
-    
-    <script>
-        window.onload = function() {
-            M.toast({
-                html: '<?php echo $_SESSION['mensagem']; ?>'
-            });
-        }
-    </script>
-
-<?php
-endif;
 //conexao
 include_once 'php_action/db_connect.php';
 
 //header
 include_once 'includes/header.php';
+
+//mensagem
+include_once 'includes/mensagem.php';
 ?>
-
-
 
 <div class="row">
     <div class="col s12 m6 push-m3">
@@ -48,8 +35,8 @@ include_once 'includes/header.php';
                         <th><?php echo $dados['datta']; ?></th>
                         <th><?php echo $dados['nota']; ?></th>
 
-                        <th><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></th>
-                        <th><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></th>
+                        <th><a href="editar.php?id=<?php echo $dados['id'];?>" class="btn-floating orange"><i class="material-icons">edit</i></a></th>
+                        <th><a href="excluir.php?id=<?php echo $dados['id'];?>" class="btn-floating red"><i class="material-icons">delete</i></a></th>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
