@@ -1,6 +1,27 @@
 <?php
+//sessao
+session_start();
+if (isset($_SESSION['mensagem'])) : ?>
+
+    
+    <script>
+        window.onload = function() {
+            M.toast({
+                html: '<?php echo $_SESSION['mensagem']; ?>'
+            });
+        }
+    </script>
+
+<?php
+endif;
+//conexao
+include_once 'php_action/db_connect.php';
+
+//header
 include_once 'includes/header.php';
 ?>
+
+
 
 <div class="row">
     <div class="col s12 m6 push-m3">
@@ -16,15 +37,21 @@ include_once 'includes/header.php';
             </thead>
 
             <tbody>
-                <tr>
-                    <th>001</th>
-                    <th>Resumo TurtleNote</th>
-                    <th>30/11/2020</th>
-                    <th>Ver Nota</th>
+                <?php
+                $sql = "SELECT * FROM notas";
+                $resultado = mysqli_query($connect, $sql);
+                while ($dados = mysqli_fetch_array($resultado)) :
+                ?>
+                    <tr>
+                        <th><?php echo $dados['id']; ?></th>
+                        <th><?php echo $dados['titulo']; ?></th>
+                        <th><?php echo $dados['datta']; ?></th>
+                        <th><?php echo $dados['nota']; ?></th>
 
-                    <th><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></th>
-                    <th><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></th>
-                </tr>
+                        <th><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></th>
+                        <th><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></th>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
         <br>

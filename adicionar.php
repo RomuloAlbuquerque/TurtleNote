@@ -19,7 +19,7 @@ include_once 'includes/header.php';
                 <label for="nota">Nota</label>
             </div>
 
-            <button type="submit" name="btn-cadastrar" class="btn">Cadastrar</button>
+            <button type="submit" name="btn-cadastrar" class="btn">Criar Nota</button>
             <a href="index.php" class="btn green">Todas as Notas</a>
         </form>
     </div>
